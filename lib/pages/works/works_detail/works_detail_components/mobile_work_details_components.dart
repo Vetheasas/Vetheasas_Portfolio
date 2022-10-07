@@ -112,148 +112,143 @@ class WorksTitleIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Column(
-        children: [
-          Expanded(
-            child:
-                Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              Center(
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: color,
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withOpacity(0.5),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-                      )
-                    ],
-                  ),
-                  child: Image.asset(
-                    iconLink,
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Center(
-                    child: AutoSizeText(
-                      title,
-                      maxLines: 2,
-                      style: TextStyle(
-                          fontFamily: 'SFUIText',
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 30, bottom: 15),
+    return Column(
+      children: [
+        Expanded(
+          child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Center(
               child: Container(
-                height: 50,
-                width: 340,
+                width: 80,
+                height: 80,
                 decoration: BoxDecoration(
-                  color: Color(0xFF2c313c),
-                  borderRadius: BorderRadius.circular(13),
+                  shape: BoxShape.circle,
+                  color: color,
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    )
+                  ],
                 ),
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.transparent),
-                        // elevation: MaterialStateProperty.all(3),
-                        shadowColor:
-                            MaterialStateProperty.all(Colors.transparent),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(13.0),
-                          ),
-                        )),
-                    onPressed: () {
-                      _launchLink(githubLink);
-                    },
-                    child: Text(
-                      'Source Code',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'SFUIText',
-                          fontWeight: FontWeight.w600),
-                    )),
+                child: Image.asset(
+                  iconLink,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
-          ),
-          installLink != ''
-              ? Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10, bottom: 35),
-                    child: Container(
-                      height: 50,
-                      width: 340,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.blue.withOpacity(0.2),
-                            spreadRadius: 4,
-                            blurRadius: 10,
-                            offset: Offset(0, 3),
-                          )
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          stops: [0.5, 1.0],
-                          colors: [
-                            Colors.blue,
-                            Colors.lightBlueAccent,
-                          ],
-                        ),
-                        color: Colors.deepPurple.shade300,
-                        borderRadius: BorderRadius.circular(13),
-                      ),
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.transparent),
-                              // elevation: MaterialStateProperty.all(3),
-                              shadowColor:
-                                  MaterialStateProperty.all(Colors.transparent),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                ),
-                              )),
-                          onPressed: () {
-                            _launchLink(installLink);
-                          },
-                          child: Text(
-                            'Install',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'SFUIText',
-                                fontWeight: FontWeight.w600),
-                          )),
-                    ),
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Center(
+                  child: AutoSizeText(
+                    title,
+                    maxLines: 2,
+                    style: TextStyle(
+                        fontFamily: 'SFUIText',
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600),
                   ),
-                )
-              : Expanded(child: Container()),
-        ],
-      ),
+                ),
+              ),
+            ),
+          ]),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 30, bottom: 15),
+            child: Container(
+              height: 50,
+              width: 340,
+              decoration: BoxDecoration(
+                color: Color(0xFF2c313c),
+                borderRadius: BorderRadius.circular(13),
+              ),
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      // elevation: MaterialStateProperty.all(3),
+                      shadowColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(13.0),
+                        ),
+                      )),
+                  onPressed: () {
+                    _launchLink(githubLink);
+                  },
+                  child: Text(
+                    'Source Code',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'SFUIText',
+                        fontWeight: FontWeight.w600),
+                  )),
+            ),
+          ),
+        ),
+        installLink != ''
+            ? Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10, bottom: 35),
+                  child: Container(
+                    height: 50,
+                    width: 340,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withOpacity(0.2),
+                          spreadRadius: 4,
+                          blurRadius: 10,
+                          offset: Offset(0, 3),
+                        )
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        stops: [0.5, 1.0],
+                        colors: [
+                          Colors.blue,
+                          Colors.lightBlueAccent,
+                        ],
+                      ),
+                      color: Colors.deepPurple.shade300,
+                      borderRadius: BorderRadius.circular(13),
+                    ),
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            // elevation: MaterialStateProperty.all(3),
+                            shadowColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(13.0),
+                              ),
+                            )),
+                        onPressed: () {
+                          _launchLink(installLink);
+                        },
+                        child: Text(
+                          'Install',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: 'SFUIText',
+                              fontWeight: FontWeight.w600),
+                        )),
+                  ),
+                ),
+              )
+            : Expanded(child: Container()),
+      ],
     );
   }
 }
