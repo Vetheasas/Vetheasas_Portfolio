@@ -45,44 +45,42 @@ class TopBar extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Center(
-                      child: AutoSizeText(
-                        'Application Detail',
-                        maxLines: 1,
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Center(
-                      child: AutoSizeText(
-                        'Project Detail',
-                        maxLines: 1,
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: Row(
+          //     children: [
+          //       Expanded(flex: 1, child: Container()
+          //           // TextButton(
+          //           //   onPressed: () {},
+          //           //   child: Center(
+          //           //     child: AutoSizeText(
+          //           //       'Application Detail',
+          //           //       maxLines: 1,
+          //           //       style: TextStyle(
+          //           //           fontSize: 15,
+          //           //           fontWeight: FontWeight.w600,
+          //           //           color: Colors.white),
+          //           //     ),
+          //           //   ),
+          //           // ),
+          //           ),
+          //       Expanded(flex: 1, child: Container()
+          //           // TextButton(
+          //           //   onPressed: () {},
+          //           //   child: Center(
+          //           //     child: AutoSizeText(
+          //           //       'Project Detail',
+          //           //       maxLines: 1,
+          //           //       style: TextStyle(
+          //           //           fontSize: 15,
+          //           //           fontWeight: FontWeight.w600,
+          //           //           color: Colors.white),
+          //           //     ),
+          //           //   ),
+          //           // ),
+          //           ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
