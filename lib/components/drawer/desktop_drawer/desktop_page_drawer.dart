@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vetheasas_porfolio/components/drawer/desktop_drawer/desktop_drawer_item.dart';
 import 'package:vetheasas_porfolio/data_provider/data_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DesktopPageDrawer extends StatefulWidget {
   late PageController pageController;
@@ -26,13 +27,20 @@ class _DesktopPageDrawerState extends State<DesktopPageDrawer> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 40, horizontal: 50),
-            child: CircleAvatar(
-              foregroundImage: AssetImage('assets/images/profile_pic.jpg'),
-              radius: 95,
+            child: SizedBox(
+              width: 200,
+              height: 200,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/profile_pic.jpg'),
+                minRadius: 95,
+                maxRadius: 95,
+                // radius: 95,
+              ),
             ),
           ),
-          Text(
+          AutoSizeText(
             'You Vetheasas',
+            maxLines: 1,
             style: TextStyle(
                 fontFamily: 'Open Sans',
                 fontSize: 30,
@@ -40,8 +48,9 @@ class _DesktopPageDrawerState extends State<DesktopPageDrawer> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-            child: Text(
+            child: AutoSizeText(
               'Flutter Developer',
+              maxLines: 1,
               style: TextStyle(
                   fontFamily: 'Open Sans',
                   fontSize: 20,

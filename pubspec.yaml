@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.0.3
   fl_chart: ^0.55.2
   auto_size_text: ^3.0.0
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,11 @@ flutter:
     - assets/images/
     - assets/skills/
     - assets/education/
+    - assets/works/idi_screenshot/
+    - assets/works/idi_screenshot/windows_idi/
+    - assets/works/portfolio_website/desktop_portfolio_website/
+    - assets/works/portfolio_website/mobile_portfolio_website/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -86,6 +92,14 @@ flutter:
           weight: 800
         - asset: assets/fonts/OpenSans-Regular.ttf
           weight: 400
+        - asset: assets/fonts/OpenSans-Bold.ttf
+          weight: 600
+
+    - family: SFUIText
+      fonts:
+        - asset: assets/fonts/SFUIText-Bold.ttf
+        - asset: assets/fonts/SFUIText-Regular.ttf
+        - asset: assets/fonts/SFUIText-Semibold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

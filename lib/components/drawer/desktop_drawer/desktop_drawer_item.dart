@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vetheasas_porfolio/data_provider/data_provider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DrawerItem extends StatefulWidget {
   late String title;
@@ -99,7 +100,7 @@ class _DrawerItemState extends State<DrawerItem> {
     // Provider.of<DataProvider>(context, listen: false)
     //     .updateStayOnPage(widget.pageNumber);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
       child: MouseRegion(
         onHover: _updateLocation,
         onExit: _incrementExit,
@@ -113,20 +114,11 @@ class _DrawerItemState extends State<DrawerItem> {
               textColor = Color(0xFF69d6c5);
             });
 
-            // if (widget.pageNumber <=
-            //         Provider.of<DataProvider>(context, listen: false)
-            //             .getCurrentPage &&
-            //     Provider.of<DataProvider>(context, listen: false)
-            //             .getCurrentPage <
-            //         widget.pageNumber + 1) {
-            //   setState(() {
-            //
-            //   });
-            // }
             widget.jumpToPage();
           },
-          child: Text(
+          child: AutoSizeText(
             widget.title,
+            maxLines: 1,
             style: TextStyle(
                 fontFamily: 'Open Sans',
                 fontSize: 20,

@@ -92,3 +92,5 @@ class ContactText extends StatelessWidget {
     );
   }
 }
+
+//TODO: add github,youtube, tutorial video..etc

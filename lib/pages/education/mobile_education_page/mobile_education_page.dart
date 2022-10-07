@@ -21,23 +21,6 @@ class MobileEducationPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w800, fontSize: 40),
                 ),
               ),
-              // Expanded(
-              //   flex: 2,
-              //   child: Container(
-              //     decoration: const BoxDecoration(
-              //       image: DecorationImage(
-              //         fit: BoxFit.fitWidth,
-              //         image: AssetImage(
-              //           'assets/images/flutter_bird.png',
-              //         ),
-              //         // colorFilter: ColorFilter.mode(
-              //         //   Colors.grey,
-              //         //   BlendMode.saturation,
-              //         // ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
               Expanded(
                 flex: 2,
                 child: EducationItem(

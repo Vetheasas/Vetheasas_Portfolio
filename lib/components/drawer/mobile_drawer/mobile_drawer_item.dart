@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vetheasas_porfolio/data_provider/data_provider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DrawerItem extends StatefulWidget {
   late String title;
@@ -57,8 +58,9 @@ class _DrawerItemState extends State<DrawerItem> {
               ),
               SizedBox(
                 child: Center(
-                  child: Text(
+                  child: AutoSizeText(
                     widget.title,
+                    maxLines: 1,
                     style: TextStyle(
                         fontFamily: 'Open Sans',
                         fontSize: 20,

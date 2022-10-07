@@ -11,8 +11,9 @@ class DesktopEducationPage extends StatelessWidget {
         Expanded(
           flex: 3,
           child: Center(
-            child: Text(
+            child: AutoSizeText(
               'Education',
+              maxLines: 1,
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 80),
             ),
           ),
@@ -20,7 +21,7 @@ class DesktopEducationPage extends StatelessWidget {
         Expanded(
           flex: 4,
           child: Padding(
-            padding: const EdgeInsets.only(left: 50),
+            padding: const EdgeInsets.only(left: 50, top: 230, bottom: 230),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,20 +81,23 @@ class EducationItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20)),
         child: Column(
           children: [
-            Row(
-              children: [
-                Expanded(flex: 1, child: Image.asset(imageLink)),
-                Expanded(
-                  flex: 4,
-                  child: EducationText(
-                    text: title,
-                    textSize: 30,
+            Expanded(
+              flex: 5,
+              child: Row(
+                children: [
+                  Expanded(flex: 1, child: Image.asset(imageLink)),
+                  Expanded(
+                    flex: 4,
+                    child: EducationText(
+                      text: title,
+                      textSize: 30,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Expanded(
-              flex: 4,
+              flex: 6,
               child: EducationText(
                 text: description,
                 textSize: 17,
@@ -118,8 +122,7 @@ class EducationText extends StatelessWidget {
       child: AutoSizeText(
         text,
         style: TextStyle(fontWeight: FontWeight.w400, fontSize: textSize),
-        maxLines: 3,
-        minFontSize: 1,
+        maxLines: 5,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DesktopHomePage extends StatelessWidget {
   const DesktopHomePage({Key? key}) : super(key: key);
@@ -37,8 +38,9 @@ class DesktopHomePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 0),
-                  child: Text(
+                  child: AutoSizeText(
                     'Hi!\nI am Vetheasas!',
+                    maxLines: 2,
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 80),
                   ),
                 ),

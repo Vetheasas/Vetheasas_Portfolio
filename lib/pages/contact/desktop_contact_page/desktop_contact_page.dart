@@ -32,7 +32,7 @@ class DesktopContactPage extends StatelessWidget {
         Expanded(
           flex: 4,
           child: Padding(
-            padding: const EdgeInsets.only(left: 50),
+            padding: const EdgeInsets.only(left: 50, top: 200, bottom: 200),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,12 +85,12 @@ class ContactText extends StatelessWidget {
               size: 50,
             ),
           ),
-          AutoSizeText(
-            text,
-            style: TextStyle(fontWeight: FontWeight.w400),
-            minFontSize: 25,
-            maxFontSize: 30,
-            maxLines: 2,
+          Expanded(
+            child: AutoSizeText(
+              text,
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 30),
+              maxLines: 1,
+            ),
           ),
         ],
       ),
