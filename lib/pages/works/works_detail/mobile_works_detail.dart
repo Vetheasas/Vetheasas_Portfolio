@@ -36,66 +36,75 @@ class _MobileWorksDetailState extends State<MobileWorksDetail> {
         child: Scaffold(
             body: Container(
           color: Color(0xFF0e1d3b),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Stack(
             children: [
-              Expanded(
-                child: TopBar(
-                  workName: widget.workName,
-                ),
-              ),
-              Expanded(
-                flex: 5,
-                child: ListView(
-                  children: [
-                    //TODO: make stack a row instead => make a center widget that will not let you be on the side
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 10, left: 10, right: 10),
-                      child: Container(
-                        height: 325,
-                        child: WorksTitleIcon(
-                          title: widget.workName,
-                          installLink: widget.installLink,
-                          iconLink: widget.iconLink,
-                          color: widget.color,
-                          githubLink: widget.githubLink,
-                          platform: widget.platform,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 5),
-                      child: Transform.scale(
-                        scale: 0.9,
-                        child: Row(
-                          children: [
-                            AutoSizeText(
-                              'Platform',
-                              style: TextStyle(
-                                  fontFamily: 'SFUIText', fontSize: 15),
+              Column(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 106),
+                      child: ListView(
+                        children: [
+                          //TODO: make stack a row instead => make a center widget that will not let you be on the side
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 10, left: 10, right: 10),
+                            child: Container(
+                              height: 325,
+                              child: WorksTitleIcon(
+                                title: widget.workName,
+                                installLink: widget.installLink,
+                                iconLink: widget.iconLink,
+                                color: widget.color,
+                                githubLink: widget.githubLink,
+                                platform: widget.platform,
+                              ),
                             ),
-                            Row(
-                              children: widget.platform,
-                            )
-                          ],
-                        ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Transform.scale(
+                              scale: 0.9,
+                              child: Row(
+                                children: [
+                                  AutoSizeText(
+                                    'Platform',
+                                    style: TextStyle(
+                                        fontFamily: 'SFUIText', fontSize: 15),
+                                  ),
+                                  Row(
+                                    children: widget.platform,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                bottom: 10, left: 10, right: 10, top: 30),
+                            child: WorksPicturesPreview(
+                              pictureList: widget.pictureList,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: DescriptionText(
+                              description: widget.description,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          bottom: 10, left: 10, right: 10, top: 30),
-                      child: WorksPicturesPreview(
-                        pictureList: widget.pictureList,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: DescriptionText(
-                        description: widget.description,
-                      ),
-                    ),
-                  ],
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 100),
+                child: Container(
+                  height: 106,
+                  child: TopBar(
+                    workName: widget.workName,
+                  ),
                 ),
               ),
             ],

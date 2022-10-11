@@ -36,43 +36,54 @@ class _DesktopWorksDetailState extends State<DesktopWorksDetail> {
     return Scaffold(
         body: Container(
       color: Color(0xFF0e1d3b),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Stack(
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: TopBar(
-              workName: widget.workName,
-            ),
+          Column(
+            children: [
+              Expanded(
+                flex: 5,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 200),
+                  child: ListView(
+                    children: [
+                      //TODO: make stack a row instead => make a center widget that will not let you be on the side
+                      Padding(
+                        padding: const EdgeInsets.all(70),
+                        child: WorksTitleIcon(
+                          title: widget.workName,
+                          installLink: widget.installLink,
+                          githubLink: widget.githubLink,
+                          iconLink: widget.iconLink,
+                          color: widget.color,
+                          platform: widget.platform,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(70),
+                        child: WorksPicturesPreview(
+                          pictureList: widget.pictureList,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(100),
+                        child: DescriptionText(
+                          description: widget.description,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            flex: 5,
-            child: ListView(
-              children: [
-                //TODO: make stack a row instead => make a center widget that will not let you be on the side
-                Padding(
-                  padding: const EdgeInsets.all(70),
-                  child: WorksTitleIcon(
-                    title: widget.workName,
-                    installLink: widget.installLink,
-                    githubLink: widget.githubLink,
-                    iconLink: widget.iconLink,
-                    color: widget.color,
-                    platform: widget.platform,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(70),
-                  child: WorksPicturesPreview(
-                    pictureList: widget.pictureList,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(100),
-                  child: DescriptionText(
-                    description: widget.description,
-                  ),
-                ),
-              ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100),
+            child: Container(
+              height: 200,
+              child: TopBar(
+                workName: widget.workName,
+              ),
             ),
           ),
         ],

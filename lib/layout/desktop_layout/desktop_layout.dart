@@ -47,8 +47,22 @@ class _DesktopLayoutState extends State<DesktopLayout> {
       color: Color(0xFF0e1d3b),
       child: Row(
         children: [
-          DesktopPageDrawer(
-            pageController: _desktopPageController,
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFF141530),
+                    spreadRadius: 10,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: DesktopPageDrawer(
+                pageController: _desktopPageController,
+              ),
+            ),
           ),
           Expanded(
             flex: 5,

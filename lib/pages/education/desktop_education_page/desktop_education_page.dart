@@ -74,11 +74,8 @@ class EducationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 3),
-            borderRadius: BorderRadius.circular(20)),
         child: Column(
           children: [
             Expanded(
@@ -118,11 +115,14 @@ class EducationText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+      padding: const EdgeInsets.all(10),
       child: AutoSizeText(
         text,
-        style: TextStyle(fontWeight: FontWeight.w400, fontSize: textSize),
-        maxLines: 5,
+        style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: textSize,
+            overflow: TextOverflow.visible),
+        maxLines: 3,
       ),
     );
   }

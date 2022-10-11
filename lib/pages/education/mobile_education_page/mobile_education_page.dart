@@ -70,16 +70,18 @@ class EducationItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
       child: Container(
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 3),
-            borderRadius: BorderRadius.circular(20)),
         child: Column(
           children: [
             Row(
               children: [
-                Expanded(flex: 1, child: Image.asset(imageLink)),
                 Expanded(
-                  flex: 2,
+                    flex: 1,
+                    child: Image.asset(
+                      imageLink,
+                      fit: BoxFit.scaleDown,
+                    )),
+                Expanded(
+                  flex: 3,
                   child: EducationText(
                     text: title,
                     textSize: 15,
@@ -88,7 +90,7 @@ class EducationItem extends StatelessWidget {
               ],
             ),
             Expanded(
-              flex: 1,
+              flex: 3,
               child: EducationText(
                 text: description,
                 textSize: 13,
@@ -112,9 +114,11 @@ class EducationText extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: AutoSizeText(
         text,
-        style: TextStyle(fontWeight: FontWeight.w400, fontSize: textSize),
+        style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: textSize,
+            overflow: TextOverflow.visible),
         maxLines: 3,
-        minFontSize: 1,
       ),
     );
   }

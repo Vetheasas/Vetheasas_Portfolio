@@ -99,33 +99,37 @@ class _DrawerItemState extends State<DrawerItem> {
     ;
     // Provider.of<DataProvider>(context, listen: false)
     //     .updateStayOnPage(widget.pageNumber);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
-      child: MouseRegion(
-        onHover: _updateLocation,
-        onExit: _incrementExit,
-        child: GestureDetector(
-          onTap: () {
-            // Provider.of<DataProvider>(context, listen: false)
-            //     .updateStayOnPage(widget.pageNumber);
 
-            setState(() {
-              onPressed = true;
-              textColor = Color(0xFF69d6c5);
-            });
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: widget.title != 'Education' ? 60 : 45, vertical: 15),
+        child: MouseRegion(
+          onHover: _updateLocation,
+          onExit: _incrementExit,
+          child: GestureDetector(
+            onTap: () {
+              // Provider.of<DataProvider>(context, listen: false)
+              //     .updateStayOnPage(widget.pageNumber);
 
-            widget.jumpToPage();
-          },
-          child: AutoSizeText(
-            widget.title,
-            maxLines: 1,
-            style: TextStyle(
-                fontFamily: 'Open Sans',
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: hasClicked()
-                    ? widget.color
-                    : textColor), //TODO: find a thinner OpenSans
+              setState(() {
+                onPressed = true;
+                textColor = Color(0xFF69d6c5);
+              });
+
+              widget.jumpToPage();
+            },
+            child: AutoSizeText(
+              '   ${widget.title}    ',
+              maxLines: 1,
+              style: TextStyle(
+                  fontFamily: 'Open Sans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  color: hasClicked()
+                      ? widget.color
+                      : textColor), //TODO: find a thinner OpenSans
+            ),
           ),
         ),
       ),

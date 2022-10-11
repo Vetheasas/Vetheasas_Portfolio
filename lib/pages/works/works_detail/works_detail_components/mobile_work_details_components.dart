@@ -10,7 +10,17 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF101128),
+      decoration: BoxDecoration(
+        color: Color(0xFF101128),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF181b35),
+            spreadRadius: 10,
+            blurRadius: 20,
+            offset: Offset(1, 3), // changes position of shadow
+          ),
+        ],
+      ),
       child: Column(
         children: [
           Expanded(
