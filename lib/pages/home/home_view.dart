@@ -20,6 +20,8 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+int savedPage = 0;
+
 //TODO: Implement PageView for other pages
 class _MyHomePageState extends State<MyHomePage> {
   @override

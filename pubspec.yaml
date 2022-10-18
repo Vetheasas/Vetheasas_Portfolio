@@ -71,6 +71,7 @@ flutter:
     - assets/works/idi_screenshot/windows_idi/
     - assets/works/portfolio_website/desktop_portfolio_website/
     - assets/works/portfolio_website/mobile_portfolio_website/
+    - assets/works/portfolio_website/
 
   #   - images/a_dot_ham.jpeg
 

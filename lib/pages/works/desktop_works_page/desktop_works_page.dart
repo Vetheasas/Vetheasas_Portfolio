@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail.dart';
+import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail_components/app_project_detail/project_detail/project_detail_data/desktop_project_detail_data.dart';
+import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail_components/app_project_detail/project_detail/project_detail_data/mobile_project_detail_data.dart';
 import 'package:vetheasas_porfolio/pages/works/works_item/works_item.dart';
 import 'package:vetheasas_porfolio/pages/works/works_platform/work_platform.dart';
 
@@ -129,6 +131,10 @@ class DesktopWorksPage extends StatelessWidget {
                                       'https://drive.google.com/file/d/1RurihcJv8N9WqspUMQi7DnZNuAKRCP-d/view?usp=sharing',
                                       'https://drive.google.com/file/d/18MWi3GciQuIi6BH00QbSC3fXeA56_P1L/view?usp=sharing'
                                     ],
+                                    mobileProjectDetailData:
+                                        mobileIDIProjectDetailData,
+                                    desktopProjectDetailData:
+                                        desktopIDIProjectDetailData,
                                   )),
                         );
                       },
@@ -231,6 +237,10 @@ class DesktopWorksPage extends StatelessWidget {
                                       ],
                                       description:
                                           '\n\nThis responsive website is used to showcase Vetheasas\'s works and background.\n\n It includes: \n\n- What Vetheasas is about\n\n- Vetheasas\' Skill\n\n- Vetheasas\' Education\n\n- Vetheasas\' Work\n\n- Vetheasas\' contact detail',
+                                      mobileProjectDetailData:
+                                          mobilePortfolioProjectDetailData,
+                                      desktopProjectDetailData:
+                                          desktopPortfolioProjectDetailData,
                                     )),
                           );
                         },

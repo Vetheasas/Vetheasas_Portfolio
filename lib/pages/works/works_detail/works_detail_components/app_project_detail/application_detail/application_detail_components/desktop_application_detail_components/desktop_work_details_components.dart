@@ -3,12 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class TopBar extends StatelessWidget {
+class TopBar extends StatefulWidget {
   late String workName;
-  TopBar({required this.workName});
+  late VoidCallback applicationDetail;
+  late VoidCallback projectDetail;
+  TopBar(
+      {required this.workName,
+      required this.applicationDetail,
+      required this.projectDetail});
 
   @override
+  State<TopBar> createState() => _TopBarState();
+}
+
+class _TopBarState extends State<TopBar> {
+  bool applicationOrProject = true;
+  String appOrWeb = 'Application';
+  @override
   Widget build(BuildContext context) {
+    if (widget.workName.contains('Website')) {
+      appOrWeb = 'Website';
+    }
     return Container(
       decoration: BoxDecoration(
         color: Color(0xFF101128),
@@ -47,31 +62,61 @@ class TopBar extends StatelessWidget {
             Expanded(
               flex: 6,
               child: AutoSizeText(
-                workName,
+                widget.workName,
                 maxLines: 1,
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800),
               ),
             ),
-            Expanded(flex: 2, child: Container()
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 70),
-                //   child: AutoSizeText(
-                //     'Application Detail',
-                //     maxLines: 1,
-                //     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                //   ),
-                // ),
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 70),
+                child: GestureDetector(
+                  onTap: () {
+                    widget.applicationDetail();
+                    setState(() {
+                      applicationOrProject = true;
+                    });
+                  },
+                  child: AutoSizeText(
+                    '$appOrWeb Detail',
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: applicationOrProject
+                          ? Colors.blueAccent
+                          : Colors.white,
+                    ),
+                  ),
                 ),
-            Expanded(flex: 3, child: Container()
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 70),
-                //   child: AutoSizeText(
-                //     'Project Detail',
-                //     maxLines: 1,
-                //     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                //   ),
-                // ),
-                )
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 70),
+                child: GestureDetector(
+                  onTap: () {
+                    widget.projectDetail();
+                    setState(() {
+                      applicationOrProject = false;
+                    });
+                  },
+                  child: AutoSizeText(
+                    'Project Detail',
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: applicationOrProject
+                          ? Colors.white
+                          : Colors.blueAccent,
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -296,16 +341,20 @@ class WorksPicturesPreview extends StatelessWidget {
 
 class DescriptionText extends StatelessWidget {
   late String description;
-
-  DescriptionText({required this.description});
+  late String workName;
+  String appWeb = 'Application';
+  DescriptionText({required this.description, required this.workName});
 
   @override
   Widget build(BuildContext context) {
+    if (workName.contains('Website')) {
+      appWeb = 'Website';
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
-          'About this work',
+          'About this $appWeb',
           maxLines: 1,
           style: TextStyle(
               fontSize: 40,

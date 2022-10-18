@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vetheasas_porfolio/pages/education/mobile_education_page/mobile_education_page.dart';
+import 'package:vetheasas_porfolio/pages/home/home_view.dart';
 import 'package:vetheasas_porfolio/pages/skills/mobile_skills_page/mobile_skills_page.dart';
 import 'package:vetheasas_porfolio/pages/works/mobile_works_page/mobile_works_page.dart';
 
@@ -16,13 +17,14 @@ class MobileLayout extends StatefulWidget {
 }
 
 class _MobileLayoutState extends State<MobileLayout> {
-  PageController _pageController = PageController();
+  PageController _pageController = PageController(keepPage: true);
   double currentPage = 0;
   @override
   void initState() {
     _pageController.addListener(() {
       setState(() {
         currentPage = _pageController.page!;
+
         Provider.of<DataProvider>(context, listen: false)
             .updateCurrentPage(currentPage);
       });

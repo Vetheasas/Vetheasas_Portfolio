@@ -5,6 +5,10 @@ import 'package:vetheasas_porfolio/data_provider/data_provider.dart';
 import 'package:vetheasas_porfolio/pages/works/works_detail/desktop_works_detail.dart';
 import 'package:vetheasas_porfolio/pages/works/works_detail/mobile_works_detail.dart';
 import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail.dart';
+import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail_components/app_project_detail/project_detail/project_detail_data/desktop_project_detail_data.dart';
+import 'package:vetheasas_porfolio/pages/works/works_detail/works_detail_components/app_project_detail/project_detail/project_detail_data/mobile_project_detail_data.dart';
+import 'package:vetheasas_porfolio/pages/works/works_item/works_item.dart';
+import 'package:vetheasas_porfolio/pages/works/works_platform/work_platform.dart';
 import 'pages/home/home_view.dart';
 
 void main() {

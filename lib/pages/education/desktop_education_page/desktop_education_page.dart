@@ -21,39 +21,49 @@ class DesktopEducationPage extends StatelessWidget {
         Expanded(
           flex: 4,
           child: Padding(
-            padding: const EdgeInsets.only(left: 50, top: 230, bottom: 230),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: EducationItem(
-                    imageLink: 'assets/education/rupp.png',
-                    title: 'Bachelor of Information Technology',
-                    description:
-                        'In the Royal University of Phnom Penh, I graduated with a Bachelor degree in Information Technology in 2020.',
-                  ),
+            padding: const EdgeInsets.symmetric(vertical: 80),
+            child: Material(
+              borderOnForeground: true,
+              elevation: 20,
+              color: Color(0xFF141530),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 50, top: 160, bottom: 130, right: 10),
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: EducationItem(
+                        imageLink: 'assets/education/rupp.png',
+                        title: 'Bachelor of Information Technology',
+                        description:
+                            'In the Royal University of Phnom Penh, I graduated with a Bachelor degree in Information Technology in 2020.',
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: EducationItem(
+                        title: 'Bachelor of Education in English',
+                        imageLink: 'assets/education/ifl.png',
+                        description:
+                            'In IFL (Institute of Foreign Languages), I graduated with a Bachelor degree in Education in English in 2020.',
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: EducationItem(
+                        title:
+                            'Intermediate Japanese Conversational Certificate',
+                        imageLink: 'assets/education/cjcc.png',
+                        description:
+                            'In CJCC (Cambodia-Japan Cooperation Center), I graduated with a certificate in Intermediate Japanese Conversation in 2019.',
+                      ),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  flex: 2,
-                  child: EducationItem(
-                    title: 'Bachelor of Education in English',
-                    imageLink: 'assets/education/ifl.png',
-                    description:
-                        'In IFL (Institute of Foreign Languages), I graduated with a Bachelor degree in Education in English in 2020.',
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: EducationItem(
-                    title: 'Intermediate Japanese Conversational Certificate',
-                    imageLink: 'assets/education/cjcc.png',
-                    description:
-                        'In CJCC (Cambodia-Japan Cooperation Center), I graduated with a certificate in Intermediate Japanese Conversation in 2019.',
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ),
@@ -74,34 +84,32 @@ class EducationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Container(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 5,
-              child: Row(
-                children: [
-                  Expanded(flex: 1, child: Image.asset(imageLink)),
-                  Expanded(
-                    flex: 4,
-                    child: EducationText(
-                      text: title,
-                      textSize: 30,
-                    ),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      child: Column(
+        children: [
+          Expanded(
+            flex: 5,
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Image.asset(imageLink)),
+                Expanded(
+                  flex: 4,
+                  child: EducationText(
+                    text: title,
+                    textSize: 30,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Expanded(
-              flex: 6,
-              child: EducationText(
-                text: description,
-                textSize: 17,
-              ),
-            )
-          ],
-        ),
+          ),
+          Expanded(
+            flex: 6,
+            child: EducationText(
+              text: description,
+              textSize: 17,
+            ),
+          )
+        ],
       ),
     );
   }

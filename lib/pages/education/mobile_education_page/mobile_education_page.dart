@@ -30,6 +30,13 @@ class MobileEducationPage extends StatelessWidget {
                       'In the Royal University of Phnom Penh, I graduated with a Bachelor degree in Information Technology in 2020.',
                 ),
               ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Color(0xFF0c1933), width: 5),
+                  ),
+                ),
+              ),
               Expanded(
                 flex: 2,
                 child: EducationItem(
@@ -37,6 +44,13 @@ class MobileEducationPage extends StatelessWidget {
                   imageLink: 'assets/education/ifl.png',
                   description:
                       'In IFL (Institute of Foreign Languages), I graduated with a Bachelor degree in Education in English in 2020.',
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Color(0xFF0c1933), width: 5),
+                  ),
                 ),
               ),
               Expanded(
