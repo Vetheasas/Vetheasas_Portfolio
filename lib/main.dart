@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => DataProvider(),
       child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Vetheasas\' Portfolio',
           theme: ThemeData(
             textTheme: TextTheme(
               bodyText1: TextStyle(),
