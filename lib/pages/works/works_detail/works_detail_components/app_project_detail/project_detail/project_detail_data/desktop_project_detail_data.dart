@@ -206,7 +206,7 @@ List<Widget> desktopPortfolioProjectDetailData = [
     mobileImageDirectory:
         'assets/works/portfolio_website/mobile_portfolio_website/7.png',
     desktopImageDirectory:
-        'assets/works/portfolio_website/desktop_portfolio_website/wi7.png',
+        'assets/works/portfolio_website/desktop_portfolio_website/wi8.png',
   ),
   ProjectDetailText(
       projectDetailText:
@@ -219,7 +219,7 @@ List<Widget> desktopPortfolioProjectDetailData = [
     mobileImageDirectory:
         'assets/works/portfolio_website/mobile_portfolio_website/7.png',
     desktopImageDirectory:
-        'assets/works/portfolio_website/desktop_portfolio_website/wi7.png',
+        'assets/works/portfolio_website/desktop_portfolio_website/wi8.png',
   ),
   ProjectDetailText(
       projectDetailText: 'This section includes'
@@ -233,7 +233,7 @@ List<Widget> desktopPortfolioProjectDetailData = [
     mobileImageDirectory:
         'assets/works/portfolio_website/mobile_portfolio_website/8.png',
     desktopImageDirectory:
-        'assets/works/portfolio_website/desktop_portfolio_website/wi8.png',
+        'assets/works/portfolio_website/desktop_portfolio_website/wi9.png',
   ),
   ProjectDetailText(
       projectDetailText:
