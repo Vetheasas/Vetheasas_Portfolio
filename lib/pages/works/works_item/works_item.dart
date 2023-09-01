@@ -114,7 +114,7 @@ class WorkItem extends StatelessWidget {
                           maxLines: 3,
                           style: TextStyle(
                             fontFamily: 'SFUIText',
-                            fontSize: 20,
+                            fontSize: 15,
                             color: Color(0xFF2b2622),
                           ),
                         ),
